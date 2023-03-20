@@ -2,8 +2,6 @@ package users
 
 import (
 	"fmt"
-	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-	"gorm.io/gorm"
 	"log"
 	"mqtg-bot/internal/common"
 	"mqtg-bot/internal/models"
@@ -13,6 +11,9 @@ import (
 	"mqtg-bot/internal/users/state"
 	"sync"
 	"time"
+
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"gorm.io/gorm"
 )
 
 type User struct {
@@ -31,7 +32,7 @@ type User struct {
 }
 
 func (user *User) Start() *common.BotMessage {
-	msg := "Welcome to MQTT Client Telegram Bot"
+	msg := "Welcome to Smart Kitchen Bot"
 	if !user.isMqttConnected() {
 		msg += "\nConfigure connection to your MQTT broker"
 	}
