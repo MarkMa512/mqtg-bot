@@ -4,3 +4,4 @@ playground
 db-data
 main
 mqtg.db
+.env_old
